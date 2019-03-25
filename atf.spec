@@ -1,7 +1,7 @@
 Summary:	Automated Testing Framework
 Name:		atf
 Version:	0.20
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Libraries
 Source0:	https://github.com/jmmv/atf/releases/download/%{name}-%{version}/atf-%{version}.tar.gz

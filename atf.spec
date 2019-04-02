@@ -1,7 +1,7 @@
 Summary:	Automated Testing Framework
 Name:		atf
 Version:	0.20
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Libraries
 Source0:	https://github.com/jmmv/atf/releases/download/%{name}-%{version}/atf-%{version}.tar.gz
@@ -29,7 +29,6 @@ tests and composing reports. The current runtime of choice is Kyua.
 %package tests
 Summary:	Automated Testing Framework - Test suite
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
 Requires:	libatf-c++-devel = %{version}-%{release}
 Requires:	libatf-c-devel = %{version}-%{release}
 Requires:	libatf-sh-devel = %{version}-%{release}

@@ -1,15 +1,15 @@
 Summary:	Automated Testing Framework
 Summary(pl.UTF-8):	Automated Testing Framework - zautomatyzowany szkielet testów
 Name:		atf
-Version:	0.21
+Version:	0.22
 Release:	1
 License:	BSD
 Group:		Development/Tools
 #Source0Download: https://github.com/jmmv/atf/releases
-Source0:	https://github.com/jmmv/atf/releases/download/%{name}-%{version}/atf-%{version}.tar.gz
-# Source0-md5:	becb36c1885b02c5f8316a672b10688a
+Source0:	https://github.com/jmmv/atf/archive/%{name}-%{version}/atf-%{version}.tar.gz
+# Source0-md5:	f40ca8c1e7cb60c439a16ba61c037352
 URL:		https://github.com/jmmv/atf/
-BuildRequires:	autoconf >= 2.65
+BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2
@@ -167,7 +167,7 @@ Development files for ATF POSIX shell bindings.
 Pliki programistyczne nagłówkowe wiązań ATF dla powłoki POSIX.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{name}-%{version}
 
 %build
 %{__libtoolize}
@@ -206,7 +206,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libatf-c
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README
+%doc AUTHORS COPYING NEWS.md README.md
 %attr(755,root,root) %{_libdir}/libatf-c.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libatf-c.so.1
 %{_mandir}/man1/atf-test-program.1*
@@ -249,7 +249,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libatf-sh
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README
+%doc AUTHORS COPYING NEWS.md README.md
 %attr(755,root,root) %{_bindir}/atf-sh
 %attr(755,root,root) %{_libexecdir}/atf-check
 %{_mandir}/man1/atf-check.1*

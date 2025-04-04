@@ -1,17 +1,17 @@
 Summary:	Automated Testing Framework
 Summary(pl.UTF-8):	Automated Testing Framework - zautomatyzowany szkielet testów
 Name:		atf
-Version:	0.22
+Version:	0.23
 Release:	1
 License:	BSD
 Group:		Development/Tools
 #Source0Download: https://github.com/jmmv/atf/releases
 Source0:	https://github.com/jmmv/atf/archive/%{name}-%{version}/atf-%{version}.tar.gz
-# Source0-md5:	f40ca8c1e7cb60c439a16ba61c037352
+# Source0-md5:	8c810a0a7b54d436defe1a5582ce5882
 URL:		https://github.com/jmmv/atf/
 BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	libtool >= 2:2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -119,7 +119,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe wiązań C++ ATF
 Group:		Development/Libraries
 Requires:	libatf-c++ = %{version}-%{release}
 Requires:	libatf-c-devel = %{version}-%{release}
-Requires:	libstdc++-devel
+Requires:	libstdc++-devel >= 6:5
 
 %description -n libatf-c++-devel
 Header files for ATF C++ bindings.
@@ -221,7 +221,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_aclocaldir}/atf-common.m4
 %{_pkgconfigdir}/atf-c.pc
 %{_mandir}/man3/atf-c.3*
-%{_mandir}/man3/atf-c-api.3*
 %{_mandir}/man7/atf.7*
 
 %files -n libatf-c-static
@@ -241,7 +240,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_aclocaldir}/atf-c++.m4
 %{_pkgconfigdir}/atf-c++.pc
 %{_mandir}/man3/atf-c++.3*
-%{_mandir}/man3/atf-c++-api.3*
 
 %files -n libatf-c++-static
 %defattr(644,root,root,755)
@@ -261,4 +259,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_aclocaldir}/atf-sh.m4
 %{_pkgconfigdir}/atf-sh.pc
 %{_mandir}/man3/atf-sh.3*
-%{_mandir}/man3/atf-sh-api.3*
